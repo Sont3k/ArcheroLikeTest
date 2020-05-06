@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 492296864}
   - component: {fileID: 492296863}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 40709b84cac403e4eb97f6b5d2fe786b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -360,7 +360,7 @@ Camera:
   far clip plane: 50
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -383,10 +383,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.5918143, y: 0.0016891723, z: -0.0012435766, w: -0.8060717}
-  m_LocalPosition: {x: -1.0707111, y: 23.639942, z: -8.447396}
+  m_LocalRotation: {x: 0.4999989, y: -0.0018105604, z: 0.0010503547, w: 0.86602354}
+  m_LocalPosition: {x: 0, y: 33, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60, y: -1.271, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: -0.23900001, z: 0.001}
