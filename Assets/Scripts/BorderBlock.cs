@@ -3,7 +3,7 @@
 public class BorderBlock : MonoBehaviour
 {
     Vector2Int gridPos;
-    const int gridSize = 1;
+    const int gridSize = 2;
 
     public int GetGridSize()
     {
