@@ -1,18 +1,17 @@
 using UnityEngine;
-
+//TODO remove redundant Rigidbody
 public class JoystickController : MonoBehaviour
 {
-    private Joystick joystick;
+    PlayerController player;
+    Joystick joystick;
 
-    private void Start()
-    {
+    private void Start() {
+        player = FindObjectOfType<PlayerController>();
         joystick = FindObjectOfType<Joystick>();
     }
 
     private void Update()
     {
-        var rigidbody = GetComponent<Rigidbody>();
-
-        rigidbody.velocity = new Vector3(joystick.Horizontal * 10f, rigidbody.velocity.y, joystick.Vertical * 10f);
+        player.transform.position += new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
     }
 }
