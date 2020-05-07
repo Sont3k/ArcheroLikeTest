@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     Vector3 lastPlayerPos;
 
     private void Start() {
-        player = PlayerController.instance;
+        player = FindObjectOfType<PlayerController>();
         lastPlayerPos = player.transform.position;
     }
 
