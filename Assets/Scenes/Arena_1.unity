@@ -2469,15 +2469,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 432052, guid: 79bccca5f0647fe409a2a43261624edb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 432052, guid: 79bccca5f0647fe409a2a43261624edb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 432052, guid: 79bccca5f0647fe409a2a43261624edb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 13732126, guid: 79bccca5f0647fe409a2a43261624edb, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
@@ -2503,6 +2503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1668be06453de3444962b0a3bf7be61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0.4
 --- !u!114 &1041580020
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 using UnityEngine;
-//TODO remove redundant Rigidbody
+
 public class JoystickController : MonoBehaviour
 {
     PlayerController player;
@@ -12,6 +12,6 @@ public class JoystickController : MonoBehaviour
 
     private void Update()
     {
-        player.transform.position += new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
+        player.transform.position += new Vector3(joystick.Horizontal * player.MovementSpeed, 0f, joystick.Vertical * player.MovementSpeed);
     }
 }
