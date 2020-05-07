@@ -26,7 +26,7 @@ public class CubeEditor : MonoBehaviour
 
         transform.position = new Vector3(
             gridPos.x,
-            .5f,
+            1.5f,
             gridPos.y
         );
     }
