@@ -1,11 +1,13 @@
 using UnityEngine;
 // TODO fix crawler moving
-public class Crawler : MonoBehaviour
+public class Crawler : MonoBehaviour, IEnemy
 {
     PlayerController player;
     CharacterController characterController;
 
     [SerializeField] float movementSpeed = 200f;
+    [SerializeField] float timeBetweenDamage;
+    private float damageCounter;
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class Crawler : MonoBehaviour
         MoveTowardPlayer();
     }
 
-    private void MoveTowardPlayer()
+    public void MoveTowardPlayer()
     {
         // float step = movementSpeed * Time.deltaTime;
         // Vector3 currentPlayerPos = player.transform.position;
@@ -31,7 +33,7 @@ public class Crawler : MonoBehaviour
         Vector3 dir = player.transform.position - transform.position;
         var movement = dir.normalized * movementSpeed * Time.deltaTime;
 
-        if(movement.magnitude > dir.magnitude)
+        if (movement.magnitude > dir.magnitude)
         {
             movement = dir;
         }
@@ -39,10 +41,23 @@ public class Crawler : MonoBehaviour
         characterController.Move(movement);
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Player")
+    private void OnCollisionEnter(Collision other)
+    {
+        DealDamage(other);
+    }
+
+    public void DealDamage(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
         {
-            player.DealDamage();
+            damageCounter -= Time.deltaTime;
+
+            if (damageCounter <= 0)
+            {
+                player.DealDamage();
+
+                damageCounter = timeBetweenDamage;
+            }
         }
     }
 }

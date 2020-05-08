@@ -3812,6 +3812,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765948014941755883, guid: 440a82e65e48a754d998edf771b63c24,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2766362560016397014, guid: 440a82e65e48a754d998edf771b63c24,
         type: 3}
       propertyPath: m_Name
@@ -3980,7 +3985,7 @@ PrefabInstance:
     - target: {fileID: 7492676392393076082, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
         type: 3}
       propertyPath: health
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4124a9b83d9fcc64a8f679e32b1f9037, type: 3}
