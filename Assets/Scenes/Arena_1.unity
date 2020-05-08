@@ -3807,6 +3807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crawler
       objectReference: {fileID: 0}
+    - target: {fileID: 2766362560016397014, guid: 440a82e65e48a754d998edf771b63c24,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2770777686703888620, guid: 440a82e65e48a754d998edf771b63c24,
         type: 3}
       propertyPath: m_LocalPosition.x

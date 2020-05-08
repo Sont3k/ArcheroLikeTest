@@ -7,7 +7,7 @@ public class Crawler : MonoBehaviour
 
     [SerializeField] float movementSpeed = 200f;
 
-    private void Start()
+    private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
         characterController = GetComponent<CharacterController>();
@@ -37,5 +37,12 @@ public class Crawler : MonoBehaviour
         }
 
         characterController.Move(movement);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Player")
+        {
+            player.DealDamage();
+        }
     }
 }
