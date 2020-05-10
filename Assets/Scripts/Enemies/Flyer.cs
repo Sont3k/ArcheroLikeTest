@@ -1,13 +1,9 @@
 using UnityEngine;
 //TODO implement Flyer logic
-public class Flyer : MonoBehaviour, IEnemy
+public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
 {
     PlayerController player;
     CharacterController characterController;
-
-    public float movementSpeed = 200f;
-    public float timeBetweenDamage;
-    private float damageCounter;
 
     [Header("Flying")]
     public float horizontalSpeed;
@@ -15,6 +11,10 @@ public class Flyer : MonoBehaviour, IEnemy
     // public float amplitude;
     public GameObject point_1, point_2;
     private bool movingForward = true;
+
+    [Header("Shooting")]
+    public GameObject firePoint;
+    public int damage;
 
     private void Awake()
     {
@@ -43,10 +43,12 @@ public class Flyer : MonoBehaviour, IEnemy
             if (Vector3.Distance(transform.position, point_2.transform.position) > 1)
             {
                 movingForward = true;
+                // Fire here
             }
             else
             {
                 movingForward = false;
+                // Fire here
             }
         }
         else
@@ -74,8 +76,8 @@ public class Flyer : MonoBehaviour, IEnemy
         }
     }
 
-    public void DealDamage(Collision other)
+    public void DealDamage()
     {
-
+        
     }
 }

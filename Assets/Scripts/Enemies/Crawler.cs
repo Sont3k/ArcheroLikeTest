@@ -1,6 +1,6 @@
 using UnityEngine;
 // TODO fix crawler moving
-public class Crawler : MonoBehaviour, IEnemy
+public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
 {
     PlayerController player;
     CharacterController characterController;
