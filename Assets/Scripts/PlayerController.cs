@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed { get => movementSpeed; }
 
     [Header("Health")]
-    [SerializeField] int health = 5; 
+    [SerializeField] int health = 5;
+    public int Health { get => health; set { health = value; } }
 
     public void Shoot()
     {
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     public void DealDamage()
     {
-        if(health <= 1)
+        if (health <= 1)
         {
             Destroy(gameObject);
         }
