@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject firePoint;
     public float attackRange;
     public float timeBetweenShots;
+    public float bulletSpeed;
     private float shotCounter;
     private List<GameObject> enemies = new List<GameObject>();
 
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
             shotCounter = timeBetweenShots / 10;
 
             bullet.GetComponent<Bullet>().direction = enemy;
-            bullet.GetComponent<Bullet>().speed = timeBetweenShots;
+            bullet.GetComponent<Bullet>().speed = bulletSpeed;
 
             Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
         }
