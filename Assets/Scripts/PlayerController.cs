@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         InitHealth();
-        FindEnemies();
     }
 
     private void InitHealth()
@@ -39,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     public void InitShoot()
     {
+        FindEnemies();
+
         foreach (GameObject enemy in enemies)
         {
             if (Vector3.Distance(transform.position, enemy.transform.position) < attackRange)
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public void FindEnemies()
     {
         GameObject[] objects = Object.FindObjectsOfType<GameObject>();
+        enemies.Clear();
 
         foreach (GameObject obj in objects)
         {

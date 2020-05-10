@@ -11,25 +11,18 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveAlongDirection();
-        DestroyOverTime();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
+        if (direction) // check gameObject existence
         {
-            //TODO Deal damage to enemy
+            MoveAlongDirection();
+            DestroyOverTime();
         }
-
-        Destroy(gameObject);
     }
 
     private void DestroyOverTime()
     {
         lifetime -= Time.deltaTime;
 
-        if(lifetime <= 0)
+        if (lifetime <= 0)
         {
             Destroy(gameObject);
         }

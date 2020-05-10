@@ -10,6 +10,9 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
     public float timeBetweenDamage = 4;
     private float damageCounter;
 
+    [Header("Health")]
+    public int health;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
@@ -50,6 +53,14 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerBullet")
+        {
+            TakeDamage();
+        }
+    }
+
     public IEnumerator DealDamage(Collision other)
     {
         player.TakeDamage();
@@ -58,6 +69,13 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
 
     public void TakeDamage()
     {
-
+        if(health > 0)
+        {
+            health--;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

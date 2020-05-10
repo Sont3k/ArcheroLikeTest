@@ -4144,6 +4144,11 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765948014941755880, guid: 440a82e65e48a754d998edf771b63c24,
+        type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2765948014941755883, guid: 440a82e65e48a754d998edf771b63c24,
         type: 3}
       propertyPath: m_Radius
