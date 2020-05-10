@@ -6,12 +6,12 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 100;
     public float lifetime = 5;
+    public Transform direction;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //TODO add direction to near enemy
-        transform.position += new Vector3(0f, 0f, speed * Time.deltaTime);
+        MoveAlongDirection();
         DestroyOverTime();
     }
 
@@ -33,5 +33,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void MoveAlongDirection()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, direction.position, speed * Time.deltaTime);
     }
 }

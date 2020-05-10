@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("Shooting")]
     public GameObject bullet;
     public GameObject firePoint;
+    public float attackRange;
     public float timeBetweenShots;
     private float shotCounter;
     private List<GameObject> enemies = new List<GameObject>();
@@ -35,13 +36,29 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void Shoot()
+    public void InitShoot()
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector3.Distance(transform.position, enemy.transform.position) < attackRange)
+            {
+                transform.LookAt(enemy.transform);
+
+                StartShooting(enemy.transform);
+            }
+        }
+    }
+
+    public void StartShooting(Transform enemy)
     {
         shotCounter -= Time.deltaTime;
 
         if (shotCounter <= 0)
         {
             shotCounter = timeBetweenShots / 10;
+
+            bullet.GetComponent<Bullet>().direction = enemy;
+            bullet.GetComponent<Bullet>().speed = timeBetweenShots;
 
             Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
         }
@@ -53,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
         foreach (GameObject obj in objects)
         {
-            if(obj.tag == "Enemy")
+            if (obj.tag == "Enemy")
             {
                 enemies.Add(obj);
             }

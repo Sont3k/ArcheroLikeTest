@@ -4329,6 +4329,16 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1750823297}
+    - target: {fileID: 7492676392393076082, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
+        type: 3}
+      propertyPath: attackRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492676392393076082, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
+        type: 3}
+      propertyPath: rateOfFire
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7492676392393076084, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
         type: 3}
       propertyPath: m_Mass
