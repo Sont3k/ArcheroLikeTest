@@ -34,15 +34,18 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
         //     transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
         // }
 
-        Vector3 dir = player.transform.position - transform.position;
-        var movement = dir.normalized * movementSpeed * Time.deltaTime;
-
-        if (movement.magnitude > dir.magnitude)
+        if (player)
         {
-            movement = dir;
-        }
+            Vector3 dir = player.transform.position - transform.position;
+            var movement = dir.normalized * movementSpeed * Time.deltaTime;
 
-        characterController.Move(movement);
+            if (movement.magnitude > dir.magnitude)
+            {
+                movement = dir;
+            }
+
+            characterController.Move(movement);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -69,7 +72,7 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
 
     public void TakeDamage()
     {
-        if(health > 0)
+        if (health > 0)
         {
             health--;
         }

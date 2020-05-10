@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 0
   timeBetweenDamage: 4
-  health: 5
+  health: 10
 --- !u!1 &2766417535752424214
 GameObject:
   m_ObjectHideFlags: 0

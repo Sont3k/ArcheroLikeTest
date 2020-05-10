@@ -17,6 +17,9 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
     public GameObject firePoint;
     public int damage;
 
+    [Header("Health")]
+    public int health;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
@@ -67,14 +70,29 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerBullet")
+        {
+            TakeDamage();
+        }
+    }
+
     public IEnumerator DealDamage()
     {
-        // Realize shooting
+        //TODO Realize shooting
         yield return null;
     }
 
     public void TakeDamage()
     {
-        
+        if (health > 0)
+        {
+            health--;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
