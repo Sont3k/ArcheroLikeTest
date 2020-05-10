@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject firePoint;
     public float timeBetweenShots;
     private float shotCounter;
+    private List<GameObject> enemies = new List<GameObject>();
 
     [Header("Movement")]
     public float movementSpeed = .4f;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         InitHealth();
+        FindEnemies();
     }
 
     private void InitHealth()
@@ -41,6 +44,19 @@ public class PlayerController : MonoBehaviour
             shotCounter = timeBetweenShots / 10;
 
             Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+        }
+    }
+
+    public void FindEnemies()
+    {
+        GameObject[] objects = Object.FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in objects)
+        {
+            if(obj.tag == "Enemy")
+            {
+                enemies.Add(obj);
+            }
         }
     }
 
