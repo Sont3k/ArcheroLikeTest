@@ -5,8 +5,8 @@ public class Flyer : MonoBehaviour, IEnemy
     PlayerController player;
     CharacterController characterController;
 
-    [SerializeField] float movementSpeed = 200f;
-    [SerializeField] float timeBetweenDamage;
+    public float movementSpeed = 200f;
+    public float timeBetweenDamage;
     private float damageCounter;
 
     private void Awake()

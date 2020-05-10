@@ -3,20 +3,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Shooting")]
-    [SerializeField] GameObject bullet;
-    [SerializeField] GameObject firePoint;
-    [SerializeField] float timeBetweenShots;
+    public GameObject bullet;
+    public GameObject firePoint;
+    public float timeBetweenShots;
     private float shotCounter;
 
     [Header("Movement")]
-    [SerializeField] float movementSpeed = .4f;
+    public float movementSpeed = .4f;
     public float MovementSpeed { get => movementSpeed; }
 
     [Header("Health")]
-    [SerializeField] int maxHealth = 5;
-    [SerializeField] int currentHealth;
+    public int maxHealth = 5;
+    public int currentHealth;
 
-    [SerializeField] GameObject healthBar;
+    public GameObject healthBar;
     HealthBarController healthBarController;
 
     private void Start()

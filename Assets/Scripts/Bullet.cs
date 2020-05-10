@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float lifetime;
+    public float speed = 100;
+    public float lifetime = 5;
 
     // Update is called once per frame
     void Update()
