@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface IEnemy
 {
-    void MoveTowardPlayer();
+    void Move();
     void DealDamage(Collision other);
 }

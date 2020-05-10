@@ -1,6 +1,6 @@
 using UnityEngine;
-// TODO fix crawler moving
-public class Crawler : MonoBehaviour, IEnemy
+
+public class Flyer : MonoBehaviour, IEnemy
 {
     PlayerController player;
     CharacterController characterController;
@@ -41,23 +41,8 @@ public class Crawler : MonoBehaviour, IEnemy
         characterController.Move(movement);
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        DealDamage(other);
-    }
-
     public void DealDamage(Collision other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            damageCounter -= Time.deltaTime;
-
-            if (damageCounter <= 0)
-            {
-                player.DealDamage();
-
-                damageCounter = timeBetweenDamage;
-            }
-        }
+       
     }
 }
