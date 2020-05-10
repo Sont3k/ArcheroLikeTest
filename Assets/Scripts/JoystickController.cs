@@ -12,7 +12,7 @@ public class JoystickController : MonoBehaviour
 
     private void Update()
     {
-        if(joystick.Horizontal <= Mathf.Epsilon && joystick.Vertical <= Mathf.Epsilon)
+        if(joystick.Horizontal == 0 && joystick.Vertical == 0)
         {
             PlayerShoot();
         }
