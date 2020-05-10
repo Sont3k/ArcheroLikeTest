@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HealthBarController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Slider slider;
+
+    public void SetMaxHealth(int health)
     {
-        
+        slider.highValue = health;
+        slider.value = health;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetHealth(int health)
     {
-        
+        slider.value = health;
     }
 }
