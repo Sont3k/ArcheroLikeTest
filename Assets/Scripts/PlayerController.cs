@@ -13,8 +13,25 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed { get => movementSpeed; }
 
     [Header("Health")]
-    [SerializeField] int health = 5;
-    public int Health { get => health; set { health = value; } }
+    [SerializeField] int maxHealth = 5;
+    [SerializeField] int currentHealth;
+
+    [SerializeField] GameObject healthBar;
+    HealthBarController healthBarController;
+
+    private void Start()
+    {
+        InitHealth();
+    }
+
+    private void InitHealth()
+    {
+        healthBarController = healthBar.GetComponent<HealthBarController>();
+        healthBarController.SetMaxHealth(maxHealth);
+        healthBarController.SetHealth(maxHealth);
+
+        currentHealth = maxHealth;
+    }
 
     public void Shoot()
     {
@@ -30,11 +47,14 @@ public class PlayerController : MonoBehaviour
 
     public void DealDamage()
     {
-        if (health <= 1)
+        if (currentHealth <= 1)
         {
             Destroy(gameObject);
         }
-
-        health--;
+        else
+        {
+            currentHealth--;
+            healthBarController.SetHealth(currentHealth);
+        }
     }
 }
