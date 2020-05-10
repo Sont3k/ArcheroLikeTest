@@ -9,40 +9,73 @@ public class Flyer : MonoBehaviour, IEnemy
     public float timeBetweenDamage;
     private float damageCounter;
 
+    [Header("Flying")]
+    public float horizontalSpeed;
+    // public float verticalSpeed;
+    // public float amplitude;
+    public GameObject point_1, point_2;
+    private bool movingForward = true;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
         characterController = GetComponent<CharacterController>();
+        InitPosition();
     }
 
-    private void Update()
+    private void InitPosition()
     {
+        point_1.transform.parent = null;
+        point_2.transform.parent = null;
+        transform.position = point_1.transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        CheckMovementDirection();
         Move();
+    }
+
+    private void CheckMovementDirection()
+    {
+        if (movingForward)
+        {
+            if (Vector3.Distance(transform.position, point_2.transform.position) > 1)
+            {
+                movingForward = true;
+            }
+            else
+            {
+                movingForward = false;
+            }
+        }
+        else
+        {
+            if (Vector3.Distance(transform.position, point_1.transform.position) > 1)
+            {
+                movingForward = false;
+            }
+            else
+            {
+                movingForward = true;
+            }
+        }
     }
 
     public void Move()
     {
-        // float step = movementSpeed * Time.deltaTime;
-        // Vector3 currentPlayerPos = player.transform.position;
-
-        // if (Vector3.Distance(transform.position, player.transform.position) > 0.001f)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
-        // }
-
-        Vector3 dir = player.transform.position - transform.position;
-        var movement = dir.normalized * movementSpeed * Time.deltaTime;
-
-        if (movement.magnitude > dir.magnitude)
+        if (movingForward)
         {
-            movement = dir;
+            transform.position = Vector3.MoveTowards(transform.position, point_2.transform.position, horizontalSpeed * Time.deltaTime);
         }
-
-        characterController.Move(movement);
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, point_1.transform.position, horizontalSpeed * Time.deltaTime);
+        }
     }
 
     public void DealDamage(Collision other)
     {
-       
+
     }
 }
