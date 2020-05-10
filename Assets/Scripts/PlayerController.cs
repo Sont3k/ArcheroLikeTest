@@ -47,8 +47,9 @@ public class PlayerController : MonoBehaviour
 
     public void DealDamage()
     {
-        if (currentHealth <= 1)
+        if (currentHealth <= 0)
         {
+            healthBarController.SetHealth(currentHealth);
             Destroy(gameObject);
         }
         else
