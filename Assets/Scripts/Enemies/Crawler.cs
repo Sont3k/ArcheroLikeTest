@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 // TODO fix crawler moving
 public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
@@ -43,21 +44,20 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
 
     private void OnCollisionEnter(Collision other)
     {
-        DealDamage(other);
-    }
-
-    public void DealDamage(Collision other)
-    {
         if (other.gameObject.tag == "Player")
         {
-            damageCounter -= Time.deltaTime;
-
-            if (damageCounter <= 0)
-            {
-                player.TakeDamage();
-
-                damageCounter = timeBetweenDamage;
-            }
+            StartCoroutine(DealDamage(other));
         }
+    }
+
+    public IEnumerator DealDamage(Collision other)
+    {
+        player.TakeDamage();
+        yield return new WaitForSeconds(1f);
+    }
+
+    public void TakeDamage()
+    {
+
     }
 }

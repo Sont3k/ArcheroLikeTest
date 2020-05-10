@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 //TODO implement Flyer logic
 public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
@@ -66,8 +67,14 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
         }
     }
 
-    public void DealDamage()
+    public IEnumerator DealDamage()
     {
         // Realize shooting
+        yield return null;
+    }
+
+    public void TakeDamage()
+    {
+        
     }
 }

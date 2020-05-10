@@ -1,4 +1,5 @@
+using System.Collections;
 public interface IRangedAttack
 {
-    void DealDamage();
+    IEnumerator DealDamage();
 }

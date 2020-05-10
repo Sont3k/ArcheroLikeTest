@@ -4139,6 +4139,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765948014941755880, guid: 440a82e65e48a754d998edf771b63c24,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2765948014941755883, guid: 440a82e65e48a754d998edf771b63c24,
         type: 3}
       propertyPath: m_Radius
@@ -4342,7 +4347,7 @@ PrefabInstance:
     - target: {fileID: 7492676392393076082, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
         type: 3}
       propertyPath: bulletSpeed
-      value: 250
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7492676392393076084, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
         type: 3}

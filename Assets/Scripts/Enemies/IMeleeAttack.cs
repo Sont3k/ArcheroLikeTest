@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
 public interface IMeleeAttack
 {
-    void DealDamage(Collision other);
+    IEnumerator DealDamage(Collision other);
 }
