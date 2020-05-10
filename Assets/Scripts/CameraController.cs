@@ -11,7 +11,10 @@ public class CameraController : MonoBehaviour
     }
 
     private void Update() {
-        UpdateCameraPosition();
+        if(player != null)
+        {
+            UpdateCameraPosition();
+        }
     }
 
     private void UpdateCameraPosition()

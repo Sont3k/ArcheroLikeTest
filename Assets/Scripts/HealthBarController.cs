@@ -16,7 +16,6 @@ public class HealthBarController : MonoBehaviour
         if(slider != null)
         {
             slider.maxValue = health;
-            print(slider.maxValue);
         }
     }
 
