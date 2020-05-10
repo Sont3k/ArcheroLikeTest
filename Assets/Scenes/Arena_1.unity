@@ -4170,6 +4170,16 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1750823297}
+    - target: {fileID: 7492676392393076084, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
+        type: 3}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492676392393076087, guid: 4124a9b83d9fcc64a8f679e32b1f9037,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0924214
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4124a9b83d9fcc64a8f679e32b1f9037, type: 3}
 --- !u!224 &8170153793414311583 stripped

@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     public float movementSpeed = .4f;
-    public float MovementSpeed { get => movementSpeed; }
 
     [Header("Health")]
     public int maxHealth = 5;

@@ -24,7 +24,7 @@ public class JoystickController : MonoBehaviour
 
     private void MovePlayer()
     {
-        player.transform.position += new Vector3(joystick.Horizontal * player.MovementSpeed, 0f, joystick.Vertical * player.MovementSpeed);
+        player.transform.position += new Vector3(joystick.Horizontal * player.movementSpeed, 0f, joystick.Vertical * player.movementSpeed);
     }
 
     private void PlayerShoot()
