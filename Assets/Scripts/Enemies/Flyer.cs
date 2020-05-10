@@ -40,24 +40,14 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
     {
         if (movingForward)
         {
-            if (Vector3.Distance(transform.position, point_2.transform.position) > 1)
-            {
-                movingForward = true;
-                // Fire here
-            }
-            else
+            if (Vector3.Distance(transform.position, point_2.transform.position) < 1)
             {
                 movingForward = false;
-                // Fire here
             }
         }
         else
         {
-            if (Vector3.Distance(transform.position, point_1.transform.position) > 1)
-            {
-                movingForward = false;
-            }
-            else
+            if (Vector3.Distance(transform.position, point_1.transform.position) < 1)
             {
                 movingForward = true;
             }
@@ -78,6 +68,6 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
 
     public void DealDamage()
     {
-        
+        // Realize shooting
     }
 }
