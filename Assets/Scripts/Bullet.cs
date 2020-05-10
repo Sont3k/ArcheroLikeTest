@@ -14,8 +14,9 @@ public class Bullet : MonoBehaviour
         if (direction) // check gameObject existence
         {
             MoveAlongDirection();
-            DestroyOverTime();
         }
+
+        DestroyOverTime();
     }
 
     private void DestroyOverTime()
