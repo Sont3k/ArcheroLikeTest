@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void DealDamage()
+    public void TakeDamage()
     {
         if (currentHealth <= 0)
         {

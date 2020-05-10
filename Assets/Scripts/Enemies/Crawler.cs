@@ -54,7 +54,7 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
 
             if (damageCounter <= 0)
             {
-                player.DealDamage();
+                player.TakeDamage();
 
                 damageCounter = timeBetweenDamage;
             }
