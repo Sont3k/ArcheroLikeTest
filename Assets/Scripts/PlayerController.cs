@@ -98,10 +98,10 @@ public class PlayerController : MonoBehaviour
 
         if(enemies.Count == 0)
         {
-            popUpController.FadeToBlack();
+            popUpController.FadeToBlack(true);
 
             yield return new WaitForSeconds(3f);
-            levelController.LoadLevel(1);
+            // levelController.LoadLevel(1);
         }
     }
 

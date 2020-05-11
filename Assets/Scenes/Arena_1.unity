@@ -823,12 +823,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2765948014555207101}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &339219311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232553874603159232, guid: 9265aabff7dd8ec43998878d3ea6d02f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7232553873446011494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &359391387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 322780370074731992, guid: 867aa74623637334992f74f5e9ff8069,
     type: 3}
   m_PrefabInstance: {fileID: 322780369888601411}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &359391388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 322780370074731999, guid: 867aa74623637334992f74f5e9ff8069,
+    type: 3}
+  m_PrefabInstance: {fileID: 322780369888601411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359391387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd5cfb5cd5a732469d2b572022dbf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &365386017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3380,6 +3398,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1912184054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1929944890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1929944890, guid: 9265aabff7dd8ec43998878d3ea6d02f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7232553873446011494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1956005294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4084,6 +4108,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91672312, guid: 9265aabff7dd8ec43998878d3ea6d02f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 359391388}
+    - target: {fileID: 1929944890, guid: 9265aabff7dd8ec43998878d3ea6d02f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929944891, guid: 9265aabff7dd8ec43998878d3ea6d02f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 44
+      objectReference: {fileID: 0}
     - target: {fileID: 7232553873173823104, guid: 9265aabff7dd8ec43998878d3ea6d02f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4210,6 +4246,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
         type: 3}
+      propertyPath: canvasChildrens.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
       propertyPath: fadeScreen
       value: 
       objectReference: {fileID: 1466253824}
@@ -4218,6 +4259,41 @@ PrefabInstance:
       propertyPath: shouldFadeToBlack
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: popUp
+      value: 
+      objectReference: {fileID: 1929944890}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: canvasChildrens.Array.data[0]
+      value: 
+      objectReference: {fileID: 339219311}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: canvasChildrens.Array.data[1]
+      value: 
+      objectReference: {fileID: 1750823297}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: canvasChildrens.Array.data[2]
+      value: 
+      objectReference: {fileID: 1750823297}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: canvasChildrens.Array.data[3]
+      value: 
+      objectReference: {fileID: 339219311}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: canvasChildrens.Array.data[4]
+      value: 
+      objectReference: {fileID: 1750823297}
+    - target: {fileID: 7275831535420303360, guid: 6df1416871dbbef40a5caac95758897d,
+        type: 3}
+      propertyPath: canvasChildrens.Array.data[5]
+      value: 
+      objectReference: {fileID: 1750823297}
     - target: {fileID: 7275831535420303361, guid: 6df1416871dbbef40a5caac95758897d,
         type: 3}
       propertyPath: m_LocalPosition.x
