@@ -26,25 +26,25 @@ public class Crawler : MonoBehaviour, IEnemy, IMeleeAttack
 
     public void Move()
     {
-        // float step = movementSpeed * Time.deltaTime;
-        // Vector3 currentPlayerPos = player.transform.position;
-
-        // if (Vector3.Distance(transform.position, player.transform.position) > 0.001f)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
-        // }
-
         if (player)
         {
-            Vector3 dir = player.transform.position - transform.position;
-            var movement = dir.normalized * movementSpeed * Time.deltaTime;
+            float step = movementSpeed * Time.deltaTime;
+            Vector3 currentPlayerPos = player.transform.position;
 
-            if (movement.magnitude > dir.magnitude)
+            if (Vector3.Distance(transform.position, player.transform.position) < 10f)
             {
-                movement = dir;
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
             }
 
-            characterController.Move(movement);
+            // Vector3 dir = player.transform.position - transform.position;
+            // var movement = dir.normalized * movementSpeed * Time.deltaTime;
+
+            // if (movement.magnitude > dir.magnitude)
+            // {
+            //     movement = dir;
+            // }
+
+            // characterController.Move(movement);
         }
     }
 
