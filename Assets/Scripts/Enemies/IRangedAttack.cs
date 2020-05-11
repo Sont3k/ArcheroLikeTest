@@ -1,5 +1,7 @@
-using System.Collections;
+using UnityEngine;
+
 public interface IRangedAttack
 {
-    IEnumerator DealDamage();
+    void InitShooting();
+    void StartShooting(Transform enemy); 
 }

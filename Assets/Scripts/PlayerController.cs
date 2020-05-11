@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     [Header("Health")]
     public int maxHealth = 5;
     public int currentHealth;
-
     public GameObject healthBar;
     HealthBarController healthBarController;
 
@@ -36,7 +35,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void InitShoot()
+    public void InitShooting()
     {
         FindEnemies();
 

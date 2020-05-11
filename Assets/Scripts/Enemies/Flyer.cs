@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 //TODO implement Flyer logic
+//TODO fix shooting, not shooting after first shot
 public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
 {
     PlayerController player;
@@ -14,8 +15,12 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
     private bool movingForward = true;
 
     [Header("Shooting")]
+    public GameObject bullet;
     public GameObject firePoint;
-    public int damage;
+    public float attackRange;
+    public float timeBetweenShots;
+    public float bulletSpeed;
+    private float shotCounter;
 
     [Header("Health")]
     public int health;
@@ -36,17 +41,20 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
 
     private void FixedUpdate()
     {
-        CheckMovementDirection();
+        StartCoroutine(CheckMovementDirection());
         Move();
     }
 
-    private void CheckMovementDirection()
+    private IEnumerator CheckMovementDirection()
     {
         if (movingForward)
         {
             if (Vector3.Distance(transform.position, point_2.transform.position) < 1)
             {
                 movingForward = false;
+
+                InitShooting();
+                yield return new WaitForSeconds(1f);
             }
         }
         else
@@ -54,6 +62,9 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
             if (Vector3.Distance(transform.position, point_1.transform.position) < 1)
             {
                 movingForward = true;
+
+                InitShooting();
+                yield return new WaitForSeconds(1f);
             }
         }
     }
@@ -78,10 +89,22 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
         }
     }
 
-    public IEnumerator DealDamage()
+    public void InitShooting()
     {
-        //TODO Realize shooting
-        yield return null;
+        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        {
+            transform.LookAt(player.transform);
+
+            StartShooting(player.transform);
+        }
+    }
+
+    public void StartShooting(Transform enemy)
+    {
+        bullet.GetComponent<Bullet>().direction = enemy;
+        bullet.GetComponent<Bullet>().speed = bulletSpeed;
+
+        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
     }
 
     public void TakeDamage()

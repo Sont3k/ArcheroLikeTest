@@ -14,7 +14,7 @@ public class JoystickController : MonoBehaviour
     {
         if(joystick.Horizontal == 0 && joystick.Vertical == 0)
         {
-            player.InitShoot();
+            player.InitShooting();
         }
         else
         {
