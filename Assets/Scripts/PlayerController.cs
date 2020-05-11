@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,8 +22,12 @@ public class PlayerController : MonoBehaviour
     public GameObject healthBar;
     HealthBarController healthBarController;
 
+    public GameObject levelControllerObject;
+    LevelController levelController;
+
     private void Start()
     {
+        levelController = levelControllerObject.GetComponent<LevelController>();
         InitHealth();
     }
 
@@ -45,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     public void InitShooting()
     {
-        FindEnemies();
+        StartCoroutine(FindEnemies());
 
         foreach (GameObject enemy in enemies)
         {
@@ -73,7 +78,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void FindEnemies()
+    public IEnumerator FindEnemies()
     {
         GameObject[] objects = Object.FindObjectsOfType<GameObject>();
         enemies.Clear();
@@ -84,6 +89,12 @@ public class PlayerController : MonoBehaviour
             {
                 enemies.Add(obj);
             }
+        }
+
+        if(enemies.Count == 0)
+        {
+            yield return new WaitForSeconds(3f);
+            levelController.LoadLevel(1);
         }
     }
 
