@@ -19,7 +19,8 @@ public class PopUpController : MonoBehaviour
         if (shouldFadeToBlack)
         {
             fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-
+            DisableParentChildrens();
+            
             if (fadeScreen.color.a == 1f)
             {
                 shouldFadeToBlack = false;
@@ -55,7 +56,7 @@ public class PopUpController : MonoBehaviour
         shouldFadeFromBlack = true;
     }
 
-    private void DisableParentChildrens()
+    private void DisableParentChildrens() // BS
     {
         foreach (GameObject children in canvasChildrens)
         {

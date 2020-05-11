@@ -98,10 +98,9 @@ public class PlayerController : MonoBehaviour
 
         if(enemies.Count == 0)
         {
-            popUpController.FadeToBlack(true);
-
+            popUpController.FadeToBlack(false);
             yield return new WaitForSeconds(3f);
-            // levelController.LoadLevel(1);
+            levelController.LoadLevel(1);
         }
     }
 
@@ -111,6 +110,8 @@ public class PlayerController : MonoBehaviour
         {
             healthBarController.SetHealth(currentHealth);
             Destroy(gameObject);
+
+            popUpController.FadeToBlack(true);
         }
         else
         {
