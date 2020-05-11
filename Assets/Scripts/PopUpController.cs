@@ -7,10 +7,6 @@ public class PopUpController : MonoBehaviour
     public float fadeSpeed;
     public bool shouldFadeToBlack, shouldFadeFromBlack;
 
-    private void Start() {
-        DontDestroyOnLoad(gameObject);
-    }
-
     void Update()
     {
         if (shouldFadeToBlack)
