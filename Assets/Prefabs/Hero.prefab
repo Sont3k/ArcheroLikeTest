@@ -471,6 +471,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   levelControllerObject: {fileID: 0}
+  popUpControllerObject: {fileID: 0}
 --- !u!114 &7492676392393076085
 MonoBehaviour:
   m_ObjectHideFlags: 0

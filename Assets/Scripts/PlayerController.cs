@@ -25,9 +25,14 @@ public class PlayerController : MonoBehaviour
     public GameObject levelControllerObject;
     LevelController levelController;
 
+    public GameObject popUpControllerObject;
+    PopUpController popUpController;
+
     private void Start()
     {
         levelController = levelControllerObject.GetComponent<LevelController>();
+        popUpController = popUpControllerObject.GetComponent<PopUpController>();
+
         InitHealth();
     }
 
@@ -93,6 +98,8 @@ public class PlayerController : MonoBehaviour
 
         if(enemies.Count == 0)
         {
+            popUpController.FadeToBlack();
+
             yield return new WaitForSeconds(3f);
             levelController.LoadLevel(1);
         }
