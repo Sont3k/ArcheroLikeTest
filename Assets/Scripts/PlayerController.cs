@@ -26,6 +26,14 @@ public class PlayerController : MonoBehaviour
         InitHealth();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyBullet")
+        {
+            TakeDamage();
+        }
+    }
+
     private void InitHealth()
     {
         healthBarController = healthBar.GetComponent<HealthBarController>();

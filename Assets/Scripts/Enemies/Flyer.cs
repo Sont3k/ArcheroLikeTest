@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
-//TODO implement Flyer logic
-//TODO fix shooting, not shooting after first shot
+
 public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
 {
     PlayerController player;
@@ -18,9 +17,7 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
     public GameObject bullet;
     public GameObject firePoint;
     public float attackRange;
-    public float timeBetweenShots;
     public float bulletSpeed;
-    private float shotCounter;
 
     [Header("Health")]
     public int health;
@@ -41,7 +38,11 @@ public class Flyer : MonoBehaviour, IEnemy, IRangedAttack
 
     private void FixedUpdate()
     {
-        StartCoroutine(CheckMovementDirection());
+        if (player)
+        {
+            StartCoroutine(CheckMovementDirection());
+        }
+
         Move();
     }
 
